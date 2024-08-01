@@ -1,0 +1,60 @@
+.studyCard{
+    width: 200px;
+    height: 240px;
+    background-color: var(--bg-color);
+    backdrop-filter: blur(4px);
+    border-radius:var(--radius-xl);
+    border-width: 1px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    gap:var(--spacing-md);
+    box-shadow: inset 0 0 10px 15px var(--black-opacity-30);
+    position: relative;
+    overflow: hidden;
+
+
+    svg[id="icon-card"] {
+        width: 36px;
+        height: 36px;
+    }
+
+    div[id="status-badge"]{
+        position: absolute;
+        top:10px;
+        right: 10px;
+    }
+}
+
+.title, .dateRangeText{
+    color:var(--white);
+    text-transform:capitalize;
+    white-space: pre-wrap;
+    text-align:center;
+    font-size: var(--font-size-sm);
+}
+
+.title{
+  font-weight: 500;
+}
+
+.dateRangeText{
+    font-size: var(--font-size-xs);
+    font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .studyCard{
+    width: 250px;
+    height: 290px;
+    svg[id="icon-card"] {
+        width: 45px;
+        height: 45px;
+    }
+  }
+  .title{
+    font-size: var(--font-size-normal);
+  }
+}

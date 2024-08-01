@@ -1,0 +1,78 @@
+.resumeSection{
+    width: 320px;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    gap:var(--spacing-2xl);
+}
+
+.profile, .skillsSection{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
+    gap:var(--spacing-2xl);
+
+    p{
+        text-align:left;
+        color:var(--white);
+        white-space: pre-wrap;
+        font-weight:400;
+        font-size: var(--font-size-sm);
+        line-height: 1.2;
+    }
+}
+
+.profileTitle, .skillsTitle {
+    display: inline-flex;
+    gap:var(--spacing-xs);
+    justify-content: center;
+    align-items:center;
+
+    svg{
+        width: 24px;
+        height: 24px;
+    }
+
+    h2 {
+        text-align:center;
+        white-space: pre-wrap;
+        font-weight:600;
+        font-size: var(--font-size-2xl);
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .resumeSection{
+        width: 600px;
+    }
+
+    .profile{
+        p {
+            font-size: var(--font-size-normal);
+        }       
+    }
+    .profileTitle,.skillsTitle{
+        svg{
+            width: 30px;
+            height: 30px;
+        }
+    
+        h2 {
+            font-size: var(--font-size-3xl);
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+    .resumeSection{
+        flex-direction: row;
+        width: 1090px;
+        align-items: flex-start;
+    }
+}

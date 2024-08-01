@@ -1,0 +1,41 @@
+.footer{
+    width: 100%;
+    border-top-width: 1px;
+    border-top-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap:var(--spacing-sm);
+    background-color: var(--bg-color-opacity-60);
+    overflow: hidden;
+    padding: var(--spacing-2xl) var(--spacing-md);
+    z-index: 10;
+}
+
+.copySection{
+    display: flex;
+    flex-direction: column;
+    gap:var(--spacing-xs);
+    justify-content: center;
+    align-items: center;
+
+    strong {
+        color:var(--white);
+        white-space: pre-wrap;
+        font-weight:normal;
+        font-size:var(--font-size-sm);
+        text-align: center;
+        font-family: "Gruppo",  sans-serif;
+    }
+}
+
+@media (min-width: 768px) {
+    .copySection{
+        flex-direction: row;
+        strong {
+            font-size:var(--font-size-normal);
+            text-align: left;
+        }
+    }
+}

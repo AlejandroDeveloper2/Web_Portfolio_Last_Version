@@ -1,0 +1,22 @@
+.skill {
+    width: 50px;
+    height: 50px;
+    border:none;
+    border-radius: var(--radius-rounded);
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    overflow: hidden;
+    img {
+        transition: transform 0.5s ease;
+        width: 25px;
+        height: 25px;
+        object-fit: contain;
+    }
+}
+
+.skill:hover{
+    img{
+        transform: rotate(25deg);
+    }
+}

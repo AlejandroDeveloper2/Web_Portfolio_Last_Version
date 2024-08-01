@@ -1,0 +1,19 @@
+.skillList{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap:var(--spacing-md);
+    justify-content: center;
+    align-items: center;
+    background-color:var(--bg-color-opacity-60);
+    backdrop-filter: blur(4px);
+    border-width: 1px;
+    border-style: solid;
+    padding: var(--spacing-4xl) var(--spacing-3xl);
+    border-radius: var(--radius-md);
+
+    li {
+        display: block;
+        list-style: none;
+    }
+}

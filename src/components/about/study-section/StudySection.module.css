@@ -1,0 +1,50 @@
+.studySection{
+    width: 320px;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    gap:var(--spacing-2xl);
+}
+
+.studySectionTitle {
+    display: inline-flex;
+    gap:var(--spacing-xs);
+    justify-content: center;
+    align-items:center;
+
+    svg{
+        width: 24px;
+        height: 24px;
+    }
+
+    h2 {
+        text-align:center;
+        white-space: pre-wrap;
+        font-weight:600;
+        font-size: var(--font-size-2xl);
+    }
+}
+
+@media (min-width: 768px) {
+    .studySection{
+        width: 600px;
+    }
+    .studySectionTitle {
+        svg{
+            width: 30px;
+            height: 30px;
+        }
+    
+        h2 {
+            font-size: var(--font-size-3xl);
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+    .studySection{
+        width: 1090px;
+    }
+}

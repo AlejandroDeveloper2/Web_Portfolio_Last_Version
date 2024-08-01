@@ -1,0 +1,51 @@
+.logoContainer{
+    background-color:var(--bg-color);
+    display: grid;
+    place-content: center;
+    border-radius: var(--radius-rounded);
+    position: relative;
+    z-index:1;
+}
+
+.small {
+    width: 60px;
+    height: 60px;
+}
+
+.medium {
+    width: 100px;
+    height: 100px;
+}
+
+.large {
+    width: 200px;
+    height: 200px;
+}
+
+.logoBody{
+    width: 83.4%;
+    height: 83.4%;
+    border-radius: var(--radius-rounded);
+    background-color: var(--bg-color);
+    box-shadow:inset 0 0 8px 3px var(--black-opacity-30);
+    overflow: hidden;
+    display: grid;
+    place-content: center;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    z-index:1;
+
+}
+
+.logoSymbol{
+    text-align: center;
+    text-transform: uppercase;
+    z-index:2;
+    font-family: "Gruppo", sans-serif;
+    font-weight: 400;
+}

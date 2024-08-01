@@ -1,0 +1,65 @@
+.proffesionSection{
+    width: 320px;
+    height: auto;
+    display: flex;
+    gap:var(--spacing-3xl);
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    margin-top:100px;
+
+    button[name="btn-see-more"]{
+        animation-name: move-up-fade-in;
+        animation-timing-function: ease-in;
+        animation-duration: 2s;
+    }
+}
+
+.nameText, .proffesionText{
+    color:var(--white);
+    text-transform:capitalize;
+    text-align: center;
+    white-space:pre-wrap;
+    animation-name: move-up-fade-in;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+}
+
+.nameText{
+    font-size: var(--font-size-4xl);
+    font-weight: 600;
+}
+
+.proffesionText{
+    font-size: var(--font-size-2xl);
+    font-weight: 300;
+}
+
+@media (min-width: 768px) {
+    .proffesionSection{
+        width: 600px;
+    }
+    .nameText{
+        font-size: var(--font-size-6xl);
+    }
+    .proffesionText{
+        font-size: var(--font-size-3xl);
+    }
+}
+
+@media (min-width:1400px){
+    .proffesionSection{
+        width: 1090px;
+    }
+}
+
+@keyframes move-up-fade-in {
+    0%{
+        transform: translateY(150%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,161 @@
+.experienceInfo{
+    width: 320px;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    gap:var(--spacing-2xl);
+}
+
+.experienceSectionTitle {
+    display: inline-flex;
+    gap:var(--spacing-xs);
+    justify-content: center;
+    align-items:center;
+
+    svg{
+        width: 24px;
+        height: 24px;
+    }
+
+    h2 {
+        text-align:center;
+        white-space: pre-wrap;
+        font-weight:bold;
+        font-size: var(--font-size-2xl);
+    }
+}
+
+.experienceList{
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    border-width: 1px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items:center;
+    gap:var(--spacing-3xl);
+    background-color: var(--bg-color-opacity-60);
+    backdrop-filter: blur(2px);
+    padding: var(--spacing-5xl) var(--spacing-4xl);
+
+    li{
+        display: block;
+        list-style: none;
+    }
+}
+
+.experience{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap:var(--spacing-3xl);
+    padding: 0;
+}
+
+.experienceHeader{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap:var(--spacing-md);
+}
+
+.experienceTitle, .experienceTimeDuration{
+    display: inline-flex;
+    gap:var(--spacing-sm);
+    justify-content:center;
+    align-items:center;
+    svg{
+        width: 24px;
+        height: 24px;
+    }
+    h3, p[id="experience-time"]{
+        font-size: var(--font-size-xl);
+    }
+    h3, p[id="experience-time"],.description{
+        text-align:center;
+        white-space: pre-wrap;
+        font-weight:500;
+        font-size: var(--font-size-normal);
+        text-transform: capitalize;
+    }
+}
+
+.description{
+    font-size: var(--font-size-sm);
+    text-transform: none;
+    line-height: 1.2;
+    font-weight:400;
+}
+.jobDetails{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    gap:var(--spacing-2xl);
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap:var(--spacing-md);
+        justify-content: flex-start;
+        align-items: center;
+        li{
+            display:block;
+            list-style: none;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .experienceInfo{
+        width: 600px;
+    }
+    .experienceSectionTitle{
+        svg{
+            width: 30px;
+            height: 30px;
+        }
+    
+        h2 {
+            font-size: var(--font-size-3xl);
+        }
+    } 
+    .experienceHeader{
+        flex-direction: row;
+        justify-content: space-between;
+        gap:0;
+        align-items: center;
+    } 
+
+    .experienceTitle,.experienceTimeDuration{
+        svg{
+            width: 30px;
+            height: 30px;
+        }
+        h3,p[id="experience-time"]{ 
+            font-size: var(--font-size-2xl);
+        }
+    }
+    .description{
+        font-size: var(--font-size-normal); 
+    }
+    .jobDetails{
+        flex-direction: row;
+        justify-content: space-between;
+        gap:0;
+    }
+}
+
+@media(min-width: 1400px) {
+    .experienceInfo{
+        width: 1090px;
+    }
+}

@@ -1,0 +1,24 @@
+.loaderContainer {
+    width: auto;
+    height: auto;
+    display:flex;
+    gap:var(--spacing-xs);
+    justify-content: center;
+    align-items: center;
+}
+
+.loaderLabel{
+    font-size:var(--font-size-4xl);
+    text-align: center;
+    font-style: normal;
+    font-family: "Gruppo", sans-serif;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
+@media(min-width:768px) {
+    .loaderLabel{
+        font-size:var(--font-size-6xl);
+    }
+}
+

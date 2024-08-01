@@ -1,0 +1,25 @@
+.filters{
+    width: 320px;
+    background-color: var(--bg-color-opacity-60);
+    backdrop-filter: blur(3px);
+    border-radius:var(--radius-md);
+    border-width: 1px;
+    border-style: solid;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:var(--spacing-md);
+    box-shadow: inset 0 0 10px 5px var(--black-opacity-60);
+    padding: var(--spacing-2xl) 0;
+}
+@media (min-width: 768px) {
+    .filters{
+        width: 600px;
+    }
+}
+@media (min-width:1400px) {
+    .filters{
+        width: 1090px;
+    }
+}

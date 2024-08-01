@@ -1,0 +1,36 @@
+.launcherSvg{
+    width: 80px;
+    height: 80px;
+    display: none;
+    position: absolute;
+    top:160px;
+    right: 10px;
+    animation-name: bounce;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+    animation-duration:4s;
+    animation-iteration-count: infinite;
+}
+@media (min-width: 768px) {
+    .launcherSvg{
+        display: block;
+    }
+}
+
+@media (min-width: 1400px) {
+    .launcherSvg{
+        width: 90px;
+        height: 90px;   
+        right: 160px;  
+    }
+}
+
+@keyframes bounce {
+    0%,100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+}

@@ -1,0 +1,22 @@
+.mainContainer{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+    gap:var(--spacing-md);
+
+    button[name="btn-contact"]{
+        position:fixed;
+        right: var(--spacing-md);
+        bottom: var(--spacing-md);
+        width: fit-content;
+        height:fit-content;
+        z-index:15;
+    }
+}
+
+

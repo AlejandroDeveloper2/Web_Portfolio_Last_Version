@@ -1,0 +1,74 @@
+.contactSection{
+    width: 100%;
+    height:auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    padding-top:120px;
+    padding-bottom:var(--spacing-6xl);
+    gap:var(--spacing-4xl);
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+.titleContainer{
+    display: flex;
+    flex-direction: column;
+    gap:var(--spacing-sm);
+    justify-content:center;
+    align-items:center;
+
+    svg {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.sectionTitle, .contactSection p[id="section-description"]{
+    color:var(--white);
+    font-weight:bold;
+    font-size:var(--font-size-4xl);
+    white-space: pre-wrap;
+    text-transform:capitalize;
+    text-align:center;
+}
+
+.contactSection p[id="section-description"]{
+    width: 320px;
+    font-weight:400;
+    font-size:var(--font-size-sm);
+    text-transform: none;
+    text-align:justify;
+    color:var(--white);
+    span{
+        font-weight: bold;
+    }
+}
+
+@media (min-width: 768px) {
+    .contactSection{
+        padding-top:180px;
+    }
+    .sectionTitle{
+        font-size:var(--font-size-6xl);
+    }
+    .contactSection p[id="section-description"]{     
+        width: 600px;
+        font-size:var(--font-size-md);     
+    }
+}
+
+@media (min-width:1400px) {
+    .contactSection p[id="section-description"]{     
+        width: 700px;         
+    }
+    .titleContainer{
+        flex-direction: row;
+        svg {
+            width: 90px;
+            height: 90px;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.mediaLinks{
+    width: auto;
+    height: auto;
+    padding:var(--spacing-sm) var(--spacing-xl);
+    display: inline-flex;
+    gap:var(--spacing-md);
+    justify-content: center;
+    align-items: center;
+    animation-name: move-up-fade-in;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+}
+
+@media (min-width: 768px) {
+    .mediaLinks{
+        padding:var(--spacing-md) var(--spacing-3xl);
+    }
+}
+
+@keyframes move-up-fade-in {
+    0%{
+        transform: translateY(150%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

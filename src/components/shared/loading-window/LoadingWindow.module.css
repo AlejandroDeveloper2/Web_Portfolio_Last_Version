@@ -1,0 +1,54 @@
+.loadingWindow{
+    width: 100vw;
+    height: 100vh;
+    display:grid;
+    place-content: center;
+    transition: all ease 0.6s;
+    position: relative;
+    overflow: hidden;
+}
+
+.barsContainer{
+    position:absolute;
+    width: 100%;
+    display:flex;
+    gap:var(--spacing-md);
+    justify-content: center;
+    align-items: flex-end;
+    bottom:0;
+    flex:1;
+}
+
+.bar{
+    width: 200px;
+    display: block;
+    opacity:0.7;
+    height:200px;
+    transform-origin: bottom;
+    animation-name:animate-bars;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: 100;
+    animation-direction: alternate;
+    transform-origin: bottom;
+}
+
+@media (min-width: 768px) {
+    .bar{
+        width: 30px;
+    }
+}
+@media (min-width: 1408px) {
+    .bar{
+        width: 40px;
+    }
+}
+
+@keyframes animate-bars {
+    0%, 100%{
+        transform: scaleY(0);
+    }
+    50%{
+        transform: scaleY(1.2);
+    }
+}

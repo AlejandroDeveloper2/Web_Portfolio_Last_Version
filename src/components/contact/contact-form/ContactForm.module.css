@@ -1,0 +1,41 @@
+.contactForm{
+    width: auto;
+    height: auto;
+    background-color:var(--bg-color-opacity-60);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:var(--spacing-4xl);
+    padding: var(--spacing-3xl) var(--spacing-5xl);
+    button[name="btn-send-message"]{
+        width: 100%;
+    }
+}
+
+.fields{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    gap:var(--spacing-md);
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .contactForm{
+        padding: var(--spacing-6xl) var(--spacing-5xl);
+    }
+    .fields{
+        width: 500px;
+    }
+}
+@media (min-width: 1400px) {
+    .fields{
+        width: 600px;
+    }
+}

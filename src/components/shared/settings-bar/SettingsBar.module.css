@@ -1,0 +1,80 @@
+.settingsMenu{
+    height: fit-content;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    border-radius: var(--radius-sm);
+    position: fixed;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:var(--spacing-md);
+    border-width: 1px;
+    border-style: solid;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(2px);
+    background-color: var(--bg-color-opacity-60);
+    right: 0;
+    top:0;
+    bottom: 0;
+    margin:auto;
+    transition: transform 0.5s ease;
+    z-index: 15;
+}
+
+ .themeSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:var(--spacing-sm);
+
+    h2 {
+        font-size:var(--font-size-sm);
+        text-align: center;
+        text-transform:capitalize;
+        white-space: pre-wrap;
+    }
+}
+
+.themeOptions{
+    flex-direction: column;
+    display: flex;
+    gap:var(--spacing-sm);
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.themeButton{
+    display: grid;
+    place-content: center;
+    border-width: 1px;
+    border-style: solid;
+    width: 40px;
+    height: 40px;
+    border-radius:var(--radius-rounded);
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &:hover{
+        transform: scale(1.2);
+    }
+}
+
+.themeColorCircle{
+    width: 25px;
+    height: 25px;
+    display: block;
+    border-radius:var(--radius-rounded);
+}
+
+@media (min-width: 768px) {
+    .themeButton{
+        width: 60px;
+        height: 60px;
+    }
+    .themeColorCircle{
+        width: 40px;
+        height: 40px;
+    }
+}

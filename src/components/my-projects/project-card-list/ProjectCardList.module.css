@@ -1,0 +1,30 @@
+.projectCardList{
+    width: 320px;
+    height: 760px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:var(--spacing-md);
+    justify-content: center;
+    align-items: flex-start;
+
+    li{
+        display: block;
+        list-style: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .projectCardList{
+        width: 600px;
+        height: 1400px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .projectCardList{
+        width: 1090px;
+        height: 800px;
+        gap:var(--spacing-6xl);
+    }
+}
