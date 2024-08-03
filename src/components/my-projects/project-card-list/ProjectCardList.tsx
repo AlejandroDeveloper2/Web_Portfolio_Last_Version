@@ -1,6 +1,9 @@
 import { ProjectCardListProps } from "@interfaces/component-types";
+import { Project } from "@interfaces/data-types";
 
-import { LoadingBar, ProjectCard } from "@components/index";
+import useModal from "@hooks/useModal";
+
+import { LoadingBar, Modal, ProjectCard } from "@components/index";
 
 import styles from "./ProjectCardList.module.css";
 
@@ -8,22 +11,33 @@ const ProjectCardList = ({
   projects,
   projectsLoading,
 }: ProjectCardListProps): JSX.Element => {
+  const { modalData, isModalVisible, toggleModal } = useModal<Project>();
+
   return (
-    <ul className={styles.projectCardList}>
-      {projectsLoading ? (
-        <LoadingBar
-          message="Cargando proyectos..."
-          isLoading={projectsLoading}
-          variant="outline"
+    <>
+      {modalData ? (
+        <Modal
+          projectData={modalData}
+          isModalVisible={isModalVisible}
+          toggleModal={toggleModal}
         />
-      ) : (
-        projects.map((project) => (
-          <li key={project.id}>
-            <ProjectCard projectData={project} />
-          </li>
-        ))
-      )}
-    </ul>
+      ) : null}
+      <ul className={styles.projectCardList}>
+        {projectsLoading ? (
+          <LoadingBar
+            message="Cargando proyectos..."
+            isLoading={projectsLoading}
+            variant="outline"
+          />
+        ) : (
+          projects.map((project) => (
+            <li key={project.id}>
+              <ProjectCard projectData={project} toggleModal={toggleModal} />
+            </li>
+          ))
+        )}
+      </ul>
+    </>
   );
 };
 

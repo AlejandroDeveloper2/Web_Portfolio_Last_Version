@@ -9,7 +9,10 @@ import { Badge, ButtonWithLabel } from "@components/index";
 
 import styles from "./ProjectCard.module.css";
 
-const ProjectCard = ({ projectData }: ProjectCardProps): JSX.Element => {
+const ProjectCard = ({
+  projectData,
+  toggleModal,
+}: ProjectCardProps): JSX.Element => {
   const { theme } = useThemeStore();
 
   return (
@@ -60,7 +63,7 @@ const ProjectCard = ({ projectData }: ProjectCardProps): JSX.Element => {
           title="Ver más detalles del proyecto"
           name="btn-see-details"
           variant="solid"
-          onClick={() => console.log("details")}
+          onClick={() => toggleModal(projectData)}
         />
         {projectData.codeUrl ? (
           <ButtonWithLabel

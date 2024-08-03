@@ -34,6 +34,7 @@ export { default as ProjectFilter } from "./my-projects/project-filter/ProjectFi
 export { default as ProjectCard } from "./my-projects/project-card/ProjectCard";
 export { default as ProjectCardList } from "./my-projects/project-card-list/ProjectCardList";
 export { default as Pagination } from "./my-projects/pagination/Pagination";
+export { default as Modal } from "./my-projects/modal/Modal";
 
 /*Contact */
 export { default as ContactForm } from "./contact/contact-form/ContactForm";

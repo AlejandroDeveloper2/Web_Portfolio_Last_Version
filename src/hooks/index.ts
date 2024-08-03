@@ -12,3 +12,4 @@ export { default as useStickyNavigation } from "./useStickyNavigation";
 export { default as usePagination } from "./usePagination";
 export { default as useProjectLoadData } from "./useProjectLoadData";
 export { default as useContactForm } from "./useContactForm";
+export { default as useModal } from "./useModal";

@@ -129,6 +129,7 @@ interface ProjectFilterProps {
 
 interface ProjectCardProps {
   projectData: Project;
+  toggleModal: (data?: Project) => void;
 }
 
 interface ProjectCardListProps {
@@ -163,6 +164,12 @@ interface InputTextProps extends Omit<InputBaseProps, "children"> {
 
 interface TextAreaProps extends Omit<InputTextProps, "children" | "type"> {}
 
+interface ModalProps {
+  isModalVisible: boolean;
+  projectData: Project;
+  toggleModal: (data?: Project) => void;
+}
+
 export type {
   IconType,
   ButtonVariantType,
@@ -194,4 +201,5 @@ export type {
   InputBaseProps,
   InputTextProps,
   TextAreaProps,
+  ModalProps,
 };
