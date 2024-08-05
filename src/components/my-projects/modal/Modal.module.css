@@ -31,7 +31,7 @@
     }
 }
 
-.modalTitle, .descriptionText{
+.modalTitle, .descriptionText, .usedTechnologies h3{
     width: 80%;
     white-space:pre-wrap;
     text-align: center;
@@ -57,6 +57,18 @@
     gap:var(--spacing-sm);
 }
 
+.usedTechnologies{
+    display: flex;
+    gap:var(--spacing-md);
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    h3{
+        width: auto;
+        font-size:var(--font-size-normal);
+    }
+}
+
 @media (min-width: 768px) {
     .modal {
         width: auto;
@@ -71,5 +83,8 @@
     }
     .actions{
         gap:var(--spacing-md);
+    }
+    .usedTechnologies h3{
+        font-size: var(--font-size-lg);
     }
 }

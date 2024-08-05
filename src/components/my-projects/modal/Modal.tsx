@@ -40,7 +40,12 @@ const Modal = ({
           {projectData.title}
         </h2>
         <p className={styles.descriptionText}>{projectData.description}</p>
-        <SkillList loading={false} skills={projectData.usedTechnologies} />
+        <div className={styles.usedTechnologies}>
+          <h3 style={{ color: `var(--${theme})` }}>
+            Tecnológias principales usadas
+          </h3>
+          <SkillList loading={false} skills={projectData.usedTechnologies} />
+        </div>
         <menu className={styles.actions}>
           {projectData.projectUrl ? (
             <ButtonWithLabel
