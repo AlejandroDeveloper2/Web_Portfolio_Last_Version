@@ -12,7 +12,7 @@ const usePagination = (totalRecords: number) => {
   const [pageButtons, setPageButtons] = useState<PageButton[]>([]);
 
   useEffect(() => {
-    setTotalPages(Math.floor(totalRecords / itemsPerPage));
+    setTotalPages(Math.ceil(totalRecords / itemsPerPage));
   }, [itemsPerPage, totalRecords]);
 
   useEffect(() => {
