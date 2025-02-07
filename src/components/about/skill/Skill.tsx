@@ -1,11 +1,15 @@
 import { SkillProps } from "@interfaces/component-types";
 
 import { useThemeStore } from "@store/index";
+import { useImageLoading } from "@hooks/index";
+
+import { Spinner } from "@components/.";
 
 import styles from "./Skill.module.css";
 
 const Skill = ({ skillData }: SkillProps): JSX.Element => {
   const { theme } = useThemeStore();
+  const { isImageLoading, toggleImageLoading } = useImageLoading();
 
   return (
     <li>
@@ -20,7 +24,13 @@ const Skill = ({ skillData }: SkillProps): JSX.Element => {
           boxShadow: `0 0 10px 5px var(--${theme})`,
         }}
       >
-        <img src={skillData.iconUrl} alt={skillData.title} loading="lazy" />
+        {isImageLoading ? <Spinner /> : null}
+        <img
+          src={skillData.iconUrl}
+          alt={skillData.title}
+          style={{ display: isImageLoading ? "none" : "block" }}
+          onLoad={() => toggleImageLoading()}
+        />
       </button>
     </li>
   );

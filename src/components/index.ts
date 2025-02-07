@@ -15,6 +15,7 @@ export { default as MediaLinks } from "./shared/media-links/MediaLinks";
 export { default as InputText } from "./shared/input/InputText";
 export { default as TextArea } from "./shared/input/TextArea";
 export { default as Footer } from "./shared/footer/Footer";
+export { default as Spinner } from "./shared/spinner/Spinner";
 
 /* Home components */
 export { default as ProfilePhoto } from "./home/profile-photo/ProfilePhoto";

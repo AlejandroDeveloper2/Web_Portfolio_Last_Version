@@ -4,8 +4,9 @@ import { ProjectCardProps } from "@interfaces/component-types";
 
 import { navToExternalLink } from "@helpers/index";
 import { useThemeStore } from "@store/index";
+import { useImageLoading } from "@hooks/index";
 
-import { Badge, ButtonWithLabel } from "@components/index";
+import { Badge, ButtonWithLabel, Spinner } from "@components/index";
 
 import styles from "./ProjectCard.module.css";
 
@@ -14,6 +15,7 @@ const ProjectCard = ({
   toggleModal,
 }: ProjectCardProps): JSX.Element => {
   const { theme } = useThemeStore();
+  const { isImageLoading, toggleImageLoading } = useImageLoading();
 
   return (
     <div
@@ -46,10 +48,12 @@ const ProjectCard = ({
             />
           </li>
         </ul>
+        {isImageLoading ? <Spinner /> : null}
         <img
           src={projectData.projectImageUrl}
           alt={projectData.title}
-          loading="lazy"
+          style={{ display: isImageLoading ? "none" : "block" }}
+          onLoad={() => toggleImageLoading()}
         />
         <div
           className={styles.projectTitle}

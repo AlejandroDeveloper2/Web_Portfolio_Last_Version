@@ -13,3 +13,4 @@ export { default as usePagination } from "./usePagination";
 export { default as useProjectLoadData } from "./useProjectLoadData";
 export { default as useContactForm } from "./useContactForm";
 export { default as useModal } from "./useModal";
+export { default as useImageLoading } from "./useImageLoading";
