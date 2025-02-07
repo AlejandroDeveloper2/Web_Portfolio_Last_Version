@@ -13,7 +13,7 @@ class ProjectsService {
         "projects"
       ).getFullList<Project>(
         projectType === "All"
-          ? {}
+          ? { requestKey: null }
           : { filter: `projectType="${projectType}"`, requestKey: null }
       );
       return projects.length;
