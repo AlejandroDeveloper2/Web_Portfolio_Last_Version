@@ -29,10 +29,21 @@ const ProjectCard = ({
       >
         <ul className={styles.projectDetails}>
           <li>
-            <Badge label={projectData.projectType} />
+            <Badge
+              label={
+                projectData.projectType === "Design"
+                  ? "Diseño UI/UX"
+                  : "Desarrollo"
+              }
+            />
           </li>
           <li>
-            <Badge label={projectData.state} index={2} />
+            <Badge
+              label={
+                projectData.state === "Finished" ? "Finalizado" : "En Progreso"
+              }
+              index={2}
+            />
           </li>
         </ul>
         <img

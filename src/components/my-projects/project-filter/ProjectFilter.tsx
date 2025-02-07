@@ -20,8 +20,8 @@ const ProjectFilter = ({ filterData }: ProjectFilterProps): JSX.Element => {
         type="button"
         title="Todas las categorias"
         name="btn-all"
-        variant={filter === "Todos" ? "solid" : "outline"}
-        onClick={() => toggleFilter("Todos")}
+        variant={filter === "All" ? "solid" : "outline"}
+        onClick={() => toggleFilter("All")}
       />
       <ButtonWithLabel
         Icon={Code}
@@ -29,8 +29,8 @@ const ProjectFilter = ({ filterData }: ProjectFilterProps): JSX.Element => {
         type="button"
         title="Proyectos de desarrollo"
         name="btn-development"
-        variant={filter === "Desarrollo" ? "solid" : "outline"}
-        onClick={() => toggleFilter("Desarrollo")}
+        variant={filter === "Development" ? "solid" : "outline"}
+        onClick={() => toggleFilter("Development")}
       />
       <ButtonWithLabel
         Icon={DesignPencil}
@@ -38,8 +38,8 @@ const ProjectFilter = ({ filterData }: ProjectFilterProps): JSX.Element => {
         type="button"
         title="Proyectos de diseño"
         name="btn-design"
-        variant={filter === "Diseño UI / UX" ? "solid" : "outline"}
-        onClick={() => toggleFilter("Diseño UI / UX")}
+        variant={filter === "Design" ? "solid" : "outline"}
+        onClick={() => toggleFilter("Design")}
       />
     </menu>
   );

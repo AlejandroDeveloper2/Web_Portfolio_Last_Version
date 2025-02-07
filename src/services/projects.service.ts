@@ -1,80 +1,51 @@
-import { supabase } from "@config/supabase";
-import { PostgrestError } from "@supabase/supabase-js";
+import { ClientResponseError } from "pocketbase";
 
-import {
-  Pagination,
-  Project,
-  ProjectType,
-  ServerResponse,
-} from "@interfaces/data-types";
+import { Project, ProjectType, ServerResponse } from "@interfaces/data-types";
+
+import { PocketBaseClient } from "@config/pocketbase";
 
 class ProjectsService {
   constructor() {}
 
   public async countAllProjects(projectType: ProjectType): Promise<number> {
-    let res: number;
     try {
-      if (projectType === "Todos") {
-        const { data: projects } = (await supabase
-          .from("projects")
-          .select("*")) as ServerResponse<Project[]>;
-        res = projects.length;
-      } else {
-        const { data: projects } = (await supabase
-          .from("projects")
-          .select("*")
-          .eq("projectType", projectType)) as ServerResponse<Project[]>;
-        res = projects.length;
-      }
+      const projects = await PocketBaseClient.collection(
+        "projects"
+      ).getFullList<Project>(
+        projectType === "All"
+          ? {}
+          : { filter: `projectType="${projectType}"`, requestKey: null }
+      );
+      return projects.length;
     } catch (error: unknown) {
-      const parsedError: PostgrestError = error as PostgrestError;
-      throw new Error(parsedError.message);
+      const pocketbaseError = error as ClientResponseError;
+      throw new Error(pocketbaseError.message);
     }
-    return res;
   }
 
   public async getProjects(
     projectType: ProjectType,
-    pagination: Pagination
+    page: number
   ): Promise<ServerResponse<Project[]>> {
-    let res: ServerResponse<Project[]>;
     try {
-      if (projectType === "Todos") {
-        const {
-          data: projects,
-          status,
-          statusText,
-        } = await supabase
-          .from("projects")
-          .select("*")
-          .range(pagination.from, pagination.to);
-        res = {
-          data: projects as Project[],
-          status,
-          statusText,
-        };
-      } else {
-        const {
-          data: projects,
-          status,
-          statusText,
-        } = await supabase
-          .from("projects")
-          .select("*")
-          .eq("projectType", projectType)
-          .range(pagination.from, pagination.to);
-        res = {
-          data: projects as Project[],
-          status,
-          statusText,
-        };
-      }
+      const { items } = await PocketBaseClient.collection(
+        "projects"
+      ).getList<Project>(
+        page,
+        2,
+        projectType === "All"
+          ? { requestKey: null }
+          : { filter: `projectType="${projectType}"`, requestKey: null }
+      );
+      return {
+        data: items,
+        status: 200,
+        statusText: "Proyectos cargados correctamente",
+      };
     } catch (error: unknown) {
-      const parsedError: PostgrestError = error as PostgrestError;
-      throw new Error(parsedError.message);
+      const pocketbaseError = error as ClientResponseError;
+      throw new Error(pocketbaseError.message);
     }
-
-    return res;
   }
 }
 export default ProjectsService;

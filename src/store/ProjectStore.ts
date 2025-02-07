@@ -22,14 +22,14 @@ const useProjectStore = create<ProjectStore>((set) => ({
   },
   getProjects: async (
     projectType,
-    pagination,
+    page,
     toggleLoading: LoadingFunction
   ): Promise<void> => {
     toggleLoading(true, "Cargando proyectos...");
     try {
       const { data: projects } = await projectsService.getProjects(
         projectType,
-        pagination
+        page
       );
       set({ projects });
     } catch (error: unknown) {

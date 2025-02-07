@@ -32,7 +32,12 @@ const JobExperience = ({ experienceData }: JobExperienceProps): JSX.Element => {
           <div className={styles.experienceTimeDuration}>
             <Clock style={{ color: `var(--${theme})` }} />
             <p id="experience-time" style={{ color: `var(--${theme})` }}>
-              {experienceData.duration + " " + experienceData.durationMetric}
+              {experienceData.duration}{" "}
+              {experienceData.durationMetric === "Months"
+                ? "Meses"
+                : experienceData.durationMetric === "Years"
+                ? "Años"
+                : "Dias"}
             </p>
           </div>
         </header>
@@ -42,7 +47,15 @@ const JobExperience = ({ experienceData }: JobExperienceProps): JSX.Element => {
         <menu className={styles.jobDetails}>
           <ul>
             <li>
-              <Badge label={experienceData.state} Icon={Check} index={1} />
+              <Badge
+                label={
+                  experienceData.state === "Finished"
+                    ? "Finalizado"
+                    : "En Progreso"
+                }
+                Icon={Check}
+                index={1}
+              />
             </li>
             <li>
               <Badge label={experienceData.company} Icon={Building} index={2} />

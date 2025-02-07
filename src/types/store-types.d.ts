@@ -6,7 +6,6 @@ import {
   Study,
   Project,
   ProjectType,
-  Pagination,
   ContactFormData,
 } from "./data-types";
 
@@ -35,7 +34,7 @@ interface ProjectStore {
   countAllProjects: (projectType: ProjectType) => Promise<void>;
   getProjects: (
     projectType: ProjectType,
-    pagination: Pagination,
+    page: number,
     toggleLoading: LoadingFunction
   ) => Promise<void>;
 }

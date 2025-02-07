@@ -29,7 +29,9 @@ const StudyCard = ({ studyData }: StudyCardProps): JSX.Element => {
         }}
       />
       <div id="status-badge">
-        <Badge label={studyData.state} />
+        <Badge
+          label={studyData.state === "Finished" ? "Finalizado" : "En Progreso"}
+        />
       </div>
       <CubeReplaceFace id="icon-card" style={{ color: `var(--${theme})` }} />
       <h2 className={styles.title}>{studyData.title}</h2>

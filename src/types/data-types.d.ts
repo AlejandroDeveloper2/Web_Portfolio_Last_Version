@@ -3,7 +3,9 @@ import { IconType } from "./component-types";
 type ThemeModeType = "yellow" | "red" | "blue" | "green";
 type ScreenType = "Tablet" | "Mobile" | "Desktop";
 type LoadingFunction = (isLoading: boolean, message: string | null) => void;
-type ProjectType = "Desarrollo" | "Diseño UI / UX" | "Todos";
+type ProjectType = "Development" | "Design" | "All";
+type StateType = "Finished" | "In Progress";
+type DurationMetricType = "Months" | "Years" | "Days";
 type FieldErrorType = {
   message: string;
   error: boolean;
@@ -28,7 +30,6 @@ interface Skill {
   id: number;
   iconUrl: string;
   title: string;
-  experienceLevel: string;
 }
 
 interface ServerResponse<T> {
@@ -42,8 +43,8 @@ interface Experience {
   jobTitle: string;
   description: string;
   duration: number;
-  durationMetric: string;
-  state: "Terminado" | "En curso";
+  durationMetric: DurationMetricType;
+  state: StateType;
   finishDate: string;
   company: string;
   projectUrl?: string;
@@ -53,7 +54,7 @@ interface Study {
   id: number;
   title: string;
   dateRange: string;
-  state: "Terminado" | "En curso" | "Abandonado";
+  state: StateType;
   certificateLink: string;
 }
 
@@ -71,7 +72,7 @@ interface Project {
   title: string;
   projectImageUrl: string;
   projectType: ProjectType;
-  state: "Terminado" | "En curso";
+  state: StateType;
   description: string;
   usedTechnologies: Skill[];
   codeUrl?: string;
@@ -107,6 +108,8 @@ export type {
   LoadingFunction,
   ProjectType,
   FieldErrorType,
+  StateType,
+  DurationMetricType,
   WrongInput,
   AnimatedBar,
   NavItem,

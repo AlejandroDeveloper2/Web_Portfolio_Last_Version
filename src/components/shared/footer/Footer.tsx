@@ -14,7 +14,7 @@ const Footer = (): JSX.Element => {
     >
       <div className={styles.copySection}>
         <Logo size="small" />
-        <strong>Derechos reservados © 2024</strong>
+        <strong>Derechos reservados © 2025</strong>
       </div>
       <MediaLinks />
     </footer>

@@ -1,6 +1,6 @@
-import { PostgrestError } from "@supabase/supabase-js";
+import { ClientResponseError } from "pocketbase";
 
-import { supabase } from "@config/supabase";
+import { PocketBaseClient } from "@config/pocketbase";
 
 import {
   Experience,
@@ -13,69 +13,51 @@ class AboutService {
   constructor() {}
 
   public async getSkills(): Promise<ServerResponse<Skill[]>> {
-    let res: ServerResponse<Skill[]>;
     try {
-      const {
+      const skills = await PocketBaseClient.collection(
+        "skills"
+      ).getFullList<Skill>({ requestKey: null });
+      return {
         data: skills,
-        status,
-        statusText,
-      } = await supabase.from("skills").select("*");
-
-      res = {
-        data: skills as Skill[],
-        status,
-        statusText,
+        status: 200,
+        statusText: "Habilidades cargadas correctamente",
       };
     } catch (error: unknown) {
-      const parsedError: PostgrestError = error as PostgrestError;
-      throw new Error(parsedError.message);
+      const pocketbaseError = error as ClientResponseError;
+      throw new Error(pocketbaseError.message);
     }
-
-    return res;
   }
 
   public async getJobExperiences(): Promise<ServerResponse<Experience[]>> {
-    let res: ServerResponse<Experience[]>;
     try {
-      const {
+      const experiences = await PocketBaseClient.collection(
+        "jobExperiences"
+      ).getFullList<Experience>({ requestKey: null });
+      return {
         data: experiences,
-        status,
-        statusText,
-      } = await supabase.from("job_experiences").select("*");
-
-      res = {
-        data: experiences as Experience[],
-        status,
-        statusText,
+        status: 200,
+        statusText: "Experiencia laboral cargada correctamente",
       };
     } catch (error: unknown) {
-      const parsedError: PostgrestError = error as PostgrestError;
-      throw new Error(parsedError.message);
+      const pocketbaseError = error as ClientResponseError;
+      throw new Error(pocketbaseError.message);
     }
-
-    return res;
   }
 
   public async getStudies(): Promise<ServerResponse<Study[]>> {
-    let res: ServerResponse<Study[]>;
     try {
-      const {
+      const studies = await PocketBaseClient.collection(
+        "studies"
+      ).getFullList<Study>({ requestKey: null });
+      return {
         data: studies,
-        status,
-        statusText,
-      } = await supabase.from("studies").select("*");
-
-      res = {
-        data: studies as Study[],
-        status,
-        statusText,
+        status: 200,
+        statusText: "Estudios cargados correctamente",
       };
     } catch (error: unknown) {
-      const parsedError: PostgrestError = error as PostgrestError;
-      throw new Error(parsedError.message);
+      const pocketbaseError = error as ClientResponseError;
+      throw new Error(pocketbaseError.message);
     }
-
-    return res;
   }
 }
 

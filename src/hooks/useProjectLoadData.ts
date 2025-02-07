@@ -14,18 +14,11 @@ const useProjectLoadData = () => {
     countAllProjects(filter);
   }, [filter]);
 
-  const {
-    from,
-    to,
-    currentPage,
-    pageButtons,
-    nextPage,
-    prevPage,
-    goExactPage,
-  } = usePagination(totalProjects);
+  const { currentPage, pageButtons, nextPage, prevPage, goExactPage } =
+    usePagination(totalProjects);
 
   useEffect(() => {
-    getProjects(filter, { from, to }, toggleLoading);
+    getProjects(filter, currentPage, toggleLoading);
   }, [filter, currentPage]);
 
   return {
